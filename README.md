@@ -15,11 +15,10 @@ This utility allows a user to scrape the latest posts from a specific subreddit 
 
 5. User Agent: A user agent is a unique identifier that helps Reddit determine the source of network requests. To use Reddit’s API, you need a unique and descriptive user agent. The recommended format is <platform>:<app ID>:<version string> (by /u/<Reddit username>). For example, android:com.example.myredditapp:v1.2.3 (by /u/kemitche).
 
-In order for this tool to connect to the Reddit API, you will need to insert your Client ID, Client Secret and User Agent into `redditkeys.py`:
+6. Creation of a config.yml file. This file will contain the Client ID and Secret created in step 4. Example contents:
 ```
-reddit = praw.Reddit(client_id='',
-                     client_secret='',
-                     user_agent='android:com.example.myredditapp:v1.2.3 (by /u/kemitche)')
+client_id:
+client_secret:
 ```
 
 ## Usage
