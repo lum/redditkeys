@@ -29,8 +29,6 @@ def retrieve_reddit_posts(subreddit, number, live=None):
                                   user_fingerprint))
         except praw.exceptions.APIException as e:
             print("Reddit API error: {}".format(e))
-        except praw.exceptions.APIException as e:
-            print("Reddit API error: {}".format(e))
         except prawcore.exceptions.ResponseException as e:
             print("Unathorized Reddit API Access")
         except prawcore.exceptions.Redirect as e:
@@ -44,8 +42,6 @@ def retrieve_reddit_posts(subreddit, number, live=None):
                           .format(submission.author.name.encode('utf-8'),
                                   submission.title.encode('utf-8'),
                                   user_fingerprint))
-        except praw.exceptions.APIException as e:
-            print("Reddit API error: {}".format(e))
         except praw.exceptions.APIException as e:
             print("Reddit API error: {}".format(e))
         except prawcore.exceptions.ResponseException:
