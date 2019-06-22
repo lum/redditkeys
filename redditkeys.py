@@ -7,11 +7,16 @@ import praw
 import prawcore
 import requests
 import sys
+import yaml
+
+
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile)
 
 BASE_URL = 'https://keybase.io/_/api/1.0/user/discover.json'
 
-reddit = praw.Reddit(client_id='',
-                     client_secret='',
+reddit = praw.Reddit(client_id=cfg['client_id'],
+                     client_secret=cfg['client_secret'],
                      user_agent='android:com.example.myredditapp:v1.2.3 (by /u/kemitche)')
 
 
