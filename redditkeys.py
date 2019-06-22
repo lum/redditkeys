@@ -9,7 +9,6 @@ import requests
 import sys
 import yaml
 
-
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
@@ -83,6 +82,7 @@ def retrieve_user_info(username):
     except:
         logging.debug("No public key fingerprint")
         return
+
 
 def main(subreddit, last, live):
     retrieve_reddit_posts(subreddit, last, live)
