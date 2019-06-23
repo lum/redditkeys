@@ -55,7 +55,6 @@ def retrieve_reddit_posts(subreddit, number, live=None):
             logging.info("Unathorized Reddit API Access")
 
 
-
 def retrieve_user_info(username):
     logging.debug("Looking up username: {}".format(username))
     try:
@@ -81,7 +80,7 @@ def retrieve_user_info(username):
     try:
         public_key = keybase_match['public_key']['key_fingerprint']
         return public_key
-    except:
+    except TypeError:
         logging.debug("No public key fingerprint")
         return
 
