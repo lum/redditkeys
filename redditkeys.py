@@ -32,11 +32,12 @@ def retrieve_reddit_posts(subreddit, number, live=None):
                                   submission.title.encode('utf-8'),
                                   user_fingerprint))
         except praw.exceptions.APIException as e:
-            print("Reddit API error: {}".format(e))
-        except prawcore.exceptions.ResponseException:
-            print("Unathorized Reddit API Access")
+            logging.info("Reddit API error: {}".format(e))
         except prawcore.exceptions.Redirect:
-            print("Unknown subreddit name: {}".format(subreddit))
+            logging.info("Unknown subreddit name: {}".format(subreddit))
+        except prawcore.exceptions.ResponseException:
+            logging.info("Unathorized Reddit API Access")
+
     else:
         try:
             for submission in reddit.subreddit(subreddit).new(limit=number):
@@ -47,11 +48,12 @@ def retrieve_reddit_posts(subreddit, number, live=None):
                                   submission.title.encode('utf-8'),
                                   user_fingerprint))
         except praw.exceptions.APIException as e:
-            print("Reddit API error: {}".format(e))
-        except prawcore.exceptions.ResponseException:
-            print("Unathorized Reddit API Access")
+            logging.info("Reddit API error: {}".format(e))
         except prawcore.exceptions.Redirect:
-            print("Unknown subreddit name: {}".format(subreddit))
+            logging.info("Unknown subreddit name: {}".format(subreddit))
+        except prawcore.exceptions.ResponseException:
+            logging.info("Unathorized Reddit API Access")
+
 
 
 def retrieve_user_info(username):
