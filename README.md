@@ -24,7 +24,7 @@ client_secret:
 ## Usage
 
 After cloning this repo to your local workstation, you can run this tool from the command line with the options below.
-In addiiton to the subreddit name to look for new posts, either `--last` or `--live` options are required. Both can not be chosen either.
+In addiiton to the subreddit name to look for new posts, either `--last` or `--live` options are required. Both can not be chosen at the same time.
 
 ## Command Line Options
 
