@@ -33,9 +33,9 @@ def retrieve_reddit_posts(subreddit, number, live=None):
                                   user_fingerprint))
         except praw.exceptions.APIException as e:
             print("Reddit API error: {}".format(e))
-        except prawcore.exceptions.ResponseException as e:
+        except prawcore.exceptions.ResponseException:
             print("Unathorized Reddit API Access")
-        except prawcore.exceptions.Redirect as e:
+        except prawcore.exceptions.Redirect:
             print("Unknown subreddit name: {}".format(subreddit))
     else:
         try:
